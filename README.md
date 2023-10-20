@@ -56,10 +56,10 @@ sequenceDiagram
 
     User->>Main: Enter Zip Code
     Main->>get_address_from_zip_code: Pass Zip Code
-    get_address_from_zip_code->>get_address_from_zip_code: Initialize addrinfo hints structure
-    get_address_from_zip_code->>get_address_from_zip_code: Set hints for IPv4 or IPv6 use
-    get_address_from_zip_code->>get_address_from_zip_code: Set hints for TCP protocol
-    get_address_from_zip_code->>get_address_from_zip_code: Call getaddrinfo
+    Note over get_address_from_zip_code: Initialize addrinfo hints structure
+    Note over get_address_from_zip_code: Set hints for IPv4 or IPv6 use
+    Note over get_address_from_zip_code: Set hints for TCP protocol
+    Note over get_address_from_zip_code: Call getaddrinfo
     get_address_from_zip_code->>create_socket_and_connect: Create Socket and Connect to Server
     create_socket_and_connect->>get_address_from_zip_code: Return Socket Descriptor
     get_address_from_zip_code->>send_request: Compose and Send HTTP Request
